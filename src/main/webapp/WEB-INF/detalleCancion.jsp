@@ -14,6 +14,7 @@
 	<p><b>Género:</b> ${cancion.genero}</p>
 	<p><b>Idioma:</b> ${cancion.idioma}</p>
 	
+	<a href='<c:url value="/canciones/formulario/editar/${cancion.id}"/>'>Editar</a>
 	<a href='<c:url value="/canciones"/>'>Volver</a>
 </body>
 </html>

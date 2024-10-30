@@ -1,15 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ page isErrorPage="true" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Agregar Canción</title>
+<title>Editar Canción</title>
 </head>
 <body>
-	<h1>Agregar Canción</h1>
-	<form:form modelAttribute="cancion" action="/canciones/procesa/agregar" method="post">
+	<h1>Editar Canción</h1>
+	<form:form modelAttribute="cancion" action="/canciones/procesa/editar/${cancion.id}" method="post">
+		<input type="hidden" name="_method" value="PUT"/>
 		<div>		
 			<form:label path="titulo">Título</form:label>
 			<form:input path="titulo" />
