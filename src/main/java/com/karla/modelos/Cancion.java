@@ -10,6 +10,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name = "canciones")
@@ -18,14 +20,24 @@ public class Cancion {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	@Column
+	@NotBlank
+	@Size(min = 5, message = "Debe tener al menos 5 caracteres.")
 	private String titulo;
 	@Column
+	@NotBlank
+	@Size(min = 3, message = "Debe tener al menos 3 caracteres.")
 	private String artista;
 	@Column
+	@NotBlank
+	@Size(min = 3, message = "Debe tener al menos 3 caracteres.")
 	private String album;
 	@Column
+	@NotBlank
+	@Size(min = 3, message = "Debe tener al menos 3 caracteres.")
 	private String genero;
 	@Column
+	@NotBlank
+	@Size(min = 3, message = "Debe tener al menos 3 caracteres.")
 	private String idioma;
 	@Column
 	private LocalDateTime fechaCreacion;
