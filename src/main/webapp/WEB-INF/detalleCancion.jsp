@@ -15,6 +15,10 @@
 	<p><b>Idioma:</b> ${cancion.idioma}</p>
 	
 	<a href='<c:url value="/canciones/formulario/editar/${cancion.id}"/>'>Editar</a>
+	<form action="/canciones/eliminar/${cancion.id}" method="POST">
+		<input type="hidden" name="_method" value="DELETE"/>
+		<button>Eliminar</button>
+	</form>
 	<a href='<c:url value="/canciones"/>'>Volver</a>
 </body>
 </html>

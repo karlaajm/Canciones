@@ -30,4 +30,8 @@ public class ServicioCanciones {
 	public Cancion actualizarCancion(Cancion cancion) {
 		return repositorio.save(cancion);
 	}
+	
+	public void eliminaCancion(Long id) {
+		repositorio.deleteById(id);
+	}
 }
